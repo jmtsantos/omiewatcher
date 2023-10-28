@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  postgres:
+    image: "postgres:9.6"
+    container_name: "postgres"
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+    restart: always
+
+  omiewatcher:
+    build: .
+    image: omiewatcher:compose
+    environment:
+      - MATRIX_SERVER=
+      - MATRIX_USER=
+      - MATRIX_TOKEN=
+      - MATRIX_ROOM=
+      - PG_HOST=
+      - PG_DB=
+      - PG_USER=
+      - PG_PASSWORD=
+    links:
+      - postgres
+    restart: always
