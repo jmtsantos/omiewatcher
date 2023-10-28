@@ -1,3 +1,8 @@
+## omiewatcher
+
+A terribly simple scrapper for the day-ahead minimum, average and maximum price tracked by OMIE.es
+Simply features daily record keeping on a postgres database plus setup notification alarms for a given threshold based on 14-day price trend
+
 ## Install
 
 A sample of the `docker-compose.yml` file:
